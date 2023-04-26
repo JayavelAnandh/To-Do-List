@@ -10,7 +10,7 @@ const Update = () => {
   let id = location.state;
   const getTodo = async () => {
     try {
-      let res = await fetch(`http://localhost:7000/taskRoutes/${id}`, {
+      let res = await fetch(`https://to-do-list-back-end.vercel.app/taskRoutes/${id}`, {
         method: "GET",
       });
       let response = await res.json();
@@ -27,7 +27,7 @@ const Update = () => {
 
   const updateTodo = async () => {
     try {
-      await fetch(`http://localhost:7000/taskRoutes/edit/${location.state}`, {
+      await fetch(`https://to-do-list-back-end.vercel.app/taskRoutes/edit/${location.state}`, {
         method: "PUT",
         body: JSON.stringify({
           todo,

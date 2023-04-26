@@ -17,7 +17,7 @@ const HomePage = (props) => {
       return;
     } else {
       try {
-        const newTask = await fetch("http://localhost:7000/taskRoutes/new", {
+        const newTask = await fetch("https://to-do-list-back-end.vercel.app/taskRoutes/new", {
           method: "POST",
           body: JSON.stringify({
             todo: task,
@@ -39,7 +39,7 @@ const HomePage = (props) => {
 
   const retriveAllTasks = async () => {
     try {
-      let allData = await fetch("http://localhost:7000/taskRoutes/all", {
+      let allData = await fetch("https://to-do-list-back-end.vercel.app/taskRoutes/all", {
         method: "GET",
       });
       const response = await allData.json();
@@ -53,7 +53,7 @@ const HomePage = (props) => {
   const handleComplete = async (task) => {
     try {
       const dataToUpdate = await fetch(
-        `http://localhost:7000/taskRoutes/edit/${task._id}`,
+        `https://to-do-list-back-end.vercel.app/taskRoutes/edit/${task._id}`,
         {
           method: "PUT",
           body: JSON.stringify({
@@ -77,7 +77,7 @@ const HomePage = (props) => {
   const handleDelete = async (task) => {
     try {
       const dataToDelete = await fetch(
-        `http://localhost:7000/taskRoutes/remove/${task._id}`,
+        `https://to-do-list-back-end.vercel.app/taskRoutes/remove/${task._id}`,
         {
           method: "DELETE",
         }
@@ -94,7 +94,7 @@ const HomePage = (props) => {
   const handleUpdate = async () => {
     try {
       const dataToUpdate = await fetch(
-        `http://localhost:7000/taskRoutes/edit/${task._id}`,
+        `https://to-do-list-back-end.vercel.app/taskRoutes/edit/${task._id}`,
         {
           method: "PUT",
           body: JSON.stringify({
